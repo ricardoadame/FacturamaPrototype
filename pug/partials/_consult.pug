@@ -1,0 +1,96 @@
+#consult-invoices
+  //Búsqueda de facturas
+  .row
+    .col-xs-12
+      .col-xs-12.col-sm-3.col-md-3.calendar
+        .section-title
+          h6 <i class="icon-search text-muted"></i> B&uacute;squeda de facturas
+          
+        .datepicker.year
+          label.text-info 2017 
+          .arrows
+            a.year-plus(href='#', title="Año siguiente") 
+              i.icon-caret-up
+            a.year-less(href='#', title="Año anterior") 
+              i.icon-caret-down
+            
+        .card
+          ul.months
+            li Ene
+            li Feb
+            li Mar
+            li.active Abr
+            li May
+            li Jun
+            li Jul
+            li Ago
+            li Sep
+            li Oct
+            li Nov
+            li Dic
+        
+      .col-xs-12.col-sm-9.col-md-9
+        .card.search.options
+          .card-block
+            .row
+              //Seleccionar Sucursal
+              .col-xs-12.col-sm-4.col-md-4.form-group
+                label Seleccionar Sucursal:
+                select.form-control
+                  option Seleccionar Sucursal
+              
+              //Seleccionar Serie
+              .col-xs-12.col-sm-4.col-md-4.form-group
+                label Seleccionar Serie:
+                select.form-control
+                  option Seleccionar Serie
+              
+              //Búsuqeda
+              .col-xs-12.col-sm-4.col-md-4.form-group
+                label B&uacute;squeda:
+                input.form-control(type="text" placeholder="Búsqueda")
+            
+            .row
+              .col-xs-12.col-sm-6.col-md-6
+                a.btn.text-info(href='#', title="Opciones avanzadas de búsqueda") Abrir b&uacute;squeda avanzada <i class="icon-caret-down"></i>
+                
+              .col-xs-12.col-sm-6.col-md-6.text-sm-right
+                a.btn.btn-info(href="#") <i class="icon-search"></i>  Buscar
+  
+  //Lista de facturas y vista Previa
+  .row
+    .col-xs-12
+      .col-xs-12.col-sm-3.col-md-3.invoices-list
+        .card 
+          .header
+            a#btn-show-emited.active(href='#', title="Facturas Emitidas") <i class="icon-plane"></i> Emitidas
+            a#btn-show-received(href='#', title="Facturas Recibidas") <i class="icon-inbox"></i> Recibidas
+          
+          .list.emited.active 
+            - for (var i = 0; i < 10; ++i) {
+              include ../widgets/_invoice-list-item
+            - }
+          .list.received
+            - for (var i = 0; i < 10; ++i) {
+              include ../widgets/_invoice-list-item
+            - }
+              
+      .col-xs-12.col-sm-9.col-md-9.invoice-preview
+        .card 
+          .toolbar
+            span.options 
+              a.item(href="#") <i class="icon-file-pdf"></i> PDF 
+              a.item(href="#") <i class="icon-code"></i> XML
+              a.item(href="#") <i class="icon-check-rounded"></i> Validar
+            
+            .float-sm-right
+              a.item(href="#") <i class="icon-plane"></i> Enviar
+              a.item(href="#") <i class="icon-ban"></i> Cancelar
+              a.item(href="#") <i class="icon-print"></i> Imprimir 
+              a.item(href="#") <i class="icon-download"></i> Descargar 
+              a.item(href="#") <i class="icon-download"></i> Descargar todo
+        
+        .card.preview
+          p Preview Factura
+               
+            

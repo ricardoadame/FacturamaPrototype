@@ -1,0 +1,167 @@
+#new-invoice
+  .add-observations
+    a
+      display: inline-block
+      vertical-align: middle
+
+      @media (min-width: $md)
+        margin:
+          top: 2rem
+
+  .product-selection
+    .form-group
+      margin:
+        bottom: 0
+  .concepts
+    @media (max-width: $md)
+      overflow-x: auto
+
+    .concepts.table
+      height: 30rem
+      padding:
+        top: 3.75rem
+
+      .header
+        background: $white
+        position: absolute
+        top: 0
+        z-index: 10
+        width: 100%
+
+        .heading
+          border:
+            bottom: 1px solid rgba(0, 0, 0, 0.05)
+          float: left
+          height: 3.75rem
+          padding: 1.094rem 0.625rem
+
+          &:first-child
+            width: 3.705%
+
+          &:nth-child(4)
+            width: 25%
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(5),
+          &:nth-child(6),
+            width: 8.44875%
+
+          &:nth-child(7),
+          &:nth-child(8),
+          &:nth-child(9)
+            width: 12.5%
+
+          b
+            font:
+              size: 80%
+
+      .body
+        overflow-y: auto
+        max-height: 21.8rem
+
+        .table-row
+          border:
+            bottom: 1px solid rgba(0, 0, 0, 0.05)
+          display: inline-block
+          margin:
+            bottom: 0.625rem
+          width: 100%
+
+          &:last-child
+            border:
+              bottom: none
+
+          .column
+            float: left
+            font:
+              size: 80%
+            min-height: 3.75rem
+            padding: 1.094rem 0.625rem
+
+            &:first-child
+              width: 3.705%
+
+            &:nth-child(4)
+              width: 25%
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(5),
+            &:nth-child(6),
+              width: 8.44875%
+
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9)
+              width: 12.5%
+
+            .btn-remove
+              color: lighten($gray, 60%)
+              display: inline-block
+              vertical-align: middle
+
+              &:hover
+                color: $red
+                text:
+                  decoration: none
+
+          .discount, .taxes
+            select,
+            b
+              display: inline-block
+              vertical-align: middle
+            select
+              margin:
+                right: 0.25rem
+              max-width: 3rem
+
+          .taxes
+              margin:
+                bottom: 0.625rem
+
+              a:not(.btn)
+                color: lighten($gray, 40%)
+                display: inline-block
+                padding: 0.25rem 0
+                text:
+                  align: center
+                vertical-align: middle
+
+                &:hover,
+                &:active,
+                &:focus
+                  color: $primary
+                  text:
+                    decoration: none
+
+                i
+                  font:
+                    size: 80%
+
+          .pnl-taxes
+            display: none
+            padding:
+              top: 0.625rem
+
+        b.total
+          color: $gray
+
+      .footer
+        background: $white
+        border:
+          top: 1px solid rgba(0, 0, 0, 0.05)
+        bottom: 0
+        width: 100%
+        z-index: 10
+
+        .quantity,
+        .create
+          float: left
+          padding: 0.625rem
+          width: 25%
+
+        .quantity
+          small,
+          b
+            display: block

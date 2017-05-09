@@ -1,0 +1,84 @@
+header
+	nav
+		//- Menu Trigger
+		.nav-trigger.nav-section
+			a#trigger(href="#")
+				i.icon-drawer
+
+			a#close(href="#")
+				i.icon-close
+
+		//- Brand
+		.header-brand.bordered.right.nav-section
+			a#logo.text-info(href="#")
+				i.icon-logo-redux
+		
+		//- Page title
+		.page-title.nav-section
+			b Page Title
+		
+		.float-xs-right
+			
+			//-Main Tools
+			.main-tools.nav-section
+				a.action-link.blue(href="#")
+					<i class="icon-plus-rounded"></i>Factura
+				a.action-link.blue(href="#")
+					<i class="icon-plus-rounded"></i>N&oacute;mina
+				a.action-link.gray(href="#")
+					<i class="icon-search"></i>Consultar
+			
+			//-Remaining Invoices
+			.remaining-invoices.bordered.left.right.nav-section
+				a#remaining(href="#")
+					small Facturas restantes:
+					span#number
+						i.icon-unlimited.text-info
+			
+			//-Notifications & Help
+			.notifications.nav-section
+				a#btn-inbox(href="#")
+					span.notification.active
+					i.icon-inbox
+				a#btn-notification(href="#")
+					span.notification
+					i.icon-bell
+				a#btn-help(href="#")
+					i.icon-help
+			
+			//-Profile Options
+			.profile.nav-section
+				a.avatar#btn-dropdown-profile(href="#")
+					img.img-fluid(src="../img/img-default.png" alt="")
+					i.icon-caret-down
+			
+				//-Perfil Dropdown
+				#dropdown-profile
+					span.caret-up
+					.header.text-xs-center
+						b#username Ricardo Adame
+						small.text-muted#rfc ABCD123456XYZ
+
+					.text-xs-center.remaining-invoices
+						a#remaining(href="#")
+							small Facturas restantes:
+							span#number
+								i.icon-unlimited.text-info
+
+					.text-xs-center.referrals
+						a(href="#")#btn-referrals Obt&eacute;n facturas Gratis
+
+					.links
+						a(href="#").profile-link-item
+							<i class="icon-user"></i>Mi Perfil Fiscal
+						a(href="#").profile-link-item
+							<i class="icon-bolt"></i>Mi Cuenta
+						a(href="#").profile-link-item
+							<i class="icon-settings"></i>Ajustes
+						a(href="#").profile-link-item
+							<i class="icon-off text-danger"></i>Cerrar Sesi&oacute;n
+			
+			//-Upgrade
+			.upgrade.nav-section
+				a#btn-upgrade-account(href="#" title="¡Mejora tu Cuenta!")
+					i.icon-bolt

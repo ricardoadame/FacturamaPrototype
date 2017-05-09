@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Facturama</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="../css/chartist.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,500">
+    <link rel="icon" href="../favicon.ico">
+  </head>
+  <body> 
+    <!--if lt IE 8
+    p.chromeframe.
+    You are using an <strong>outdated</strong> browser.
+    Please <a href="http://browsehappy.com/">upgrade your browser</a>
+    to improve your experience.
+    			
+    -->
+    <header>
+      <nav>
+        <div class="nav-trigger nav-section"><a id="trigger" href="#"><i class="icon-drawer"></i></a><a id="close" href="#"><i class="icon-close"></i></a></div>
+        <div class="header-brand bordered right nav-section"><a class="text-info" id="logo" href="#"><i class="icon-logo-redux"></i></a></div>
+        <div class="page-title nav-section"><b>Page Title</b></div>
+        <div class="float-xs-right">
+          <div class="main-tools nav-section"><a class="action-link blue" href="#"><i class="icon-plus-rounded"></i>Factura</a><a class="action-link blue" href="#"><i class="icon-plus-rounded"></i>N&oacute;mina</a><a class="action-link gray" href="#"><i class="icon-search"></i>Consultar</a></div>
+          <div class="remaining-invoices bordered left right nav-section"><a id="remaining" href="#"><small>Facturas restantes:</small><span id="number"><i class="icon-unlimited text-info"></i></span></a></div>
+          <div class="notifications nav-section"><a id="btn-inbox" href="#"><span class="notification active"></span><i class="icon-inbox"></i></a><a id="btn-notification" href="#"><span class="notification"></span><i class="icon-bell"></i></a><a id="btn-help" href="#"><i class="icon-help"></i></a></div>
+          <div class="profile nav-section"><a class="avatar" id="btn-dropdown-profile" href="#"><img class="img-fluid" src="../img/img-default.png" alt=""><i class="icon-caret-down"></i></a>
+            <div id="dropdown-profile"><span class="caret-up"></span>
+              <div class="header text-xs-center"><b id="username">Ricardo Adame</b><small class="text-muted" id="rfc">ABCD123456XYZ</small></div>
+              <div class="text-xs-center remaining-invoices"><a id="remaining" href="#"><small>Facturas restantes:</small><span id="number"><i class="icon-unlimited text-info"></i></span></a></div>
+              <div class="text-xs-center referrals"><a href="#" id="btn-referrals">Obt&eacute;n facturas Gratis</a></div>
+              <div class="links"><a class="profile-link-item" href="#"><i class="icon-user"></i>Mi Perfil Fiscal</a><a class="profile-link-item" href="#"><i class="icon-bolt"></i>Mi Cuenta</a><a class="profile-link-item" href="#"><i class="icon-settings"></i>Ajustes</a><a class="profile-link-item" href="#"><i class="icon-off text-danger"></i>Cerrar Sesi&oacute;n</a></div>
+            </div>
+          </div>
+          <div class="upgrade nav-section"><a id="btn-upgrade-account" href="#" title="¡Mejora tu Cuenta!"><i class="icon-bolt"></i></a></div>
+        </div>
+      </nav>
+    </header>
+    <section id="main-content">
+      <aside id="sidebar">
+        <ul id="menu">
+          <li><a class="sb-trigger" href="#"><i class="icon-invoices text-info"></i> Facturas <i class="icon-caret-down float-xs-right"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Recuperaci&oacute;n							</a></li>
+              <li><a href="#">Facturaci&oacute;n masiva</a></li>
+              <li><a href="#">Descarga de Facturas				</a></li>
+              <li><a href="#">Cargar XML				</a></li>
+              <li><a href="#">Cargar CBB				</a></li>
+              <li><a href="#">Agregar Addenda</a></li>
+            </ul>
+          </li>
+          <li><a class="sb-trigger" href="#"><i class="icon-clipboard text-info"></i> N&oacute;minas <i class="icon-caret-down float-xs-right"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Consultar</a></li>
+            </ul>
+          </li>
+          <li><a class="sb-trigger" href="#"><i class="icon-notebook text-info"></i> Cat&aacute;logos <i class="icon-caret-down float-xs-right"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Clientes</a></li>
+              <li><a href="#">Productos</a></li>
+              <li><a href="#">Empleados</a></li>
+              <li><a href="#">Proveedores</a></li>
+            </ul>
+          </li>
+          <li><a class="sb-trigger" href="#"><i class="icon-pig text-info"></i> Cuentas <i class="icon-caret-down float-xs-right"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Cuentas por cobrar</a></li>
+              <li><a href="#">Cuentas por pagar</a></li>
+              <li><a href="#">Libro diario</a></li>
+            </ul>
+          </li>
+          <li><a class="sb-trigger" href="#"><i class="icon-chart text-info"></i> Estad&iacute;sticas <i class="icon-caret-down float-xs-right"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Mis estad&iacute;sticas</a></li>
+              <li><a href="#">Informe mensual</a></li>
+            </ul>
+          </li>
+          <li><a class="sb-trigger" href="#"><i class="icon-calculator text-info"></i> Contabilidad <i class="icon-caret-down float-xs-right"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Historial de documentos</a></li>
+              <li><a href="#">Historial de facturas y pagos</a></li>
+              <li><a href="#">Movimientos sin factura</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <article id="content">
+        <div class="container-fluid">
+          <div class="page-title row text-xs-center"><b>Page Title</b></div>
+          <div class="row">
+            <!--Nueva factura:-->
+            <div id="new-invoice">
+              <!--Datos obligatorios de la factura:-->
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="section-title">
+                  <h6><i class="icon-list"></i> Datos de la Factura:</h6>
+                </div>
+                <div class="card">
+                  <div class="card-block">
+                    <div class="row"> 
+                      <!--Seleccionar Cliente-->
+                      <div class="col-xs-12 col-sm-6 col-md-6 form-group edition">
+                        <label>Seleccionar Cliente:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar Moneda</option>
+                        </select>
+                        <div class="tools"><a class="text-info" href="#"><i class="icon-plus"></i></a><a class="text-info" href="#"><i class="icon-edit"> </i></a></div>
+                      </div>
+                      <!--Seleccionar Tipo de factura:-->
+                      <div class="col-xs-12 col-sm-6 col-md-6 form-group">
+                        <label>Tipo de factura:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar tipo de factura</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">                   
+                      <!--Seleccionar Método de pago:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>M&eacute;todo de pago:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar M&eacute;todo de pago</option>
+                        </select>
+                      </div>
+                      <!--Lugar de expedición:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>Lugar de expedici&oacute;n:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar Lugar de expedici&oacute;n</option>
+                        </select>
+                      </div>
+                      <!--Series:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>Series:</label>
+                        <input class="form-control" type="text" name="" value="" placeholder="Series">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Datos opcionales de la factura:-->
+              <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="section-title">
+                  <h6><i class="icon-list"></i> Datos opcionales de la Factura:</h6>
+                </div>
+                <div class="card">
+                  <div class="card-block">
+                    <div class="row">        
+                      <!--Número de pedido-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>N&uacute;mero de pedido:</label>
+                        <input class="form-control" type="text" name="" value="" placeholder="Número de pedido">
+                      </div>
+                      <!--Seleccionar Moneda:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>Moneda:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar Moneda</option>
+                        </select>
+                      </div>
+                      <!--Seleccionar Factura con fecha anterior:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>Fecha anterior:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar Factura con fecha anterior  </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">        
+                      <!--Condiciones de pago-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>Condiciones de pago:</label>
+                        <input class="form-control" type="text" name="" value="" placeholder="Condiciones de pago">
+                      </div>
+                      <!--Tipo de pago:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 form-group">
+                        <label>Tipo de pago:</label>
+                        <select class="form-control" name="">
+                          <option>Seleccionar Tipo de pago</option>
+                        </select>
+                      </div>
+                      <!--Seleccionar Factura con fecha anterior:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 add-observations"><a class="btn btn-link btn-sm text-info" href="#" data-toggle="modal" data-target="#modal-observations"><i class="icon-plus"></i> Observaciones</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Seleccionar producto o servicio:-->
+              <div class="col-xs-12">
+                <div class="section-title">
+                  <h6><i class="icon-cart"></i> Seleccionar producto o servicio:</h6>
+                </div>
+                <div class="card">
+                  <div class="card-block">
+                    <!--Seleccionar producto o servicio:-->
+                    <div class="product-selection row">
+                      <div class="col-xs-12 col-sm-8 col-md-8 form-group">
+                        <div class="edition">
+                          <select class="form-control" name="">
+                            <option>Seleccionar Producto o servicio</option>
+                          </select>
+                          <div class="tools"><a class="text-info" href="#"><i class="icon-plus"></i></a><a class="text-info" href="#"><i class="icon-edit"> </i></a></div>
+                        </div>
+                      </div>
+                      <!--Seleccionar producto o servicio:-->
+                      <div class="col-xs-12 col-sm-4 col-md-4 text-xs-center text-sm-right"><a class="btn btn-link btn-sm text-info" href="#"><i class="icon-save"></i> Guardar</a><a class="btn btn-link btn-sm text-info" href="#" data-toggle="modal" data-target="#modal-preview"><i class="icon-search"></i> Vista Previa </a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Conceptos de la factura:  -->
+              <div class="col-xs-12">
+                <div class="card concepts">
+                  <!--Tabla-->
+                  <div class="concepts table">
+                    <!--Encabezado-->
+                    <div class="header">
+                      <div class="heading"></div>
+                      <div class="heading"> <b>Cant.</b></div>
+                      <div class="heading"> <b>Unidad</b></div>
+                      <div class="heading"> <b>Descripci&oacute;n                         </b></div>
+                      <div class="heading"> <b>Precio</b></div>
+                      <div class="heading"> <b>Subtotal</b></div>
+                      <div class="heading"> <b>Descuento</b></div>
+                      <div class="heading taxes"> <b>Impuestos</b></div>
+                      <div class="heading"> <b>Total</b></div>
+                    </div>
+                    <div class="body">
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                      <!--Fila de Tabla-->
+                      <div class="table-row">
+                        <!--Eliminar-->
+                        <div class="column text-xs-center"><a class="btn-remove" href="#" title="Eliminar Elemento"><i class="icon-close-rounded"> </i></a></div>
+                        <!--Cantidad-->
+                        <div class="column">
+                          <p>1</p>
+                        </div>
+                        <!--Unidad-->
+                        <div class="column">
+                          <select class="form-control form-control-sm" name="">
+                            <option>Seleccionar Unidad </option>
+                          </select>
+                        </div>
+                        <!--Descripción del concepto    -->
+                        <div class="column description">        
+                          <p id="description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <!--Precio-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Subtotal-->
+                        <div class="column"><b>$0,000.00</b></div>
+                        <!--Descuento-->
+                        <div class="column discount">
+                          <select class="form-control form-control-sm" name="">
+                            <option>$</option>
+                            <option>%</option>
+                          </select><b>0</b>
+                        </div>
+                        <!--Impuestos-->
+                        <div class="column">
+                          <div class="taxes">
+                            <!--IVA-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA 16%</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--IVA Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>IVA Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <div class="taxes">
+                            <!--ISR Ret-->
+                            <select class="form-control form-control-sm" name="">
+                              <option>ISR Ret.</option>
+                            </select><b>0</b>
+                          </div>
+                          <!--Agregar Impuesto Local--><a class="btn-add-tax" href="#" title="Agregar Impuesto local"><i class="icon-plus-rounded"></i> Impuesto local  </a>
+                          <div class="pnl-taxes">
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Nombre del impuesto">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Tasa">
+                            </div>
+                            <div class="form-group">
+                              <input class="form-control form-control-sm" type="text" name="" value="" placeholder="Monto">
+                            </div><a class="btn btn-success btn-sm btn-block" href="#" title="Agregar Impuesto local"><i class="icon-check-rounded"></i> Agregar</a>
+                          </div>
+                        </div>
+                        <!--Total-->
+                        <div class="column text-xs-right"><b class="total">$0,000.00</b></div>
+                      </div>
+                    </div>
+                    <!--Footer:-->
+                    <div class="footer">
+                      <!--Subtotal:-->
+                      <div class="quantity"><small class="text-muted">Subtotal</small><b>$0, 000.00</b></div>
+                      <!--IVA:   -->
+                      <div class="quantity"><small class="text-muted">IVA</small><b>$0, 000.00    </b></div>
+                      <!--Total:-->
+                      <div class="quantity"><small class="text-muted">Subtotal</small><b>$0, 000.00 </b></div>
+                      <div class="create"> <a class="btn btn-success btn-block btn-lg" href="#"><i class="icon-check-rounded"></i> Crear Factura</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <footer>
+      <div class="main-tools"><a class="action-link blue" href="#"><i class="icon-plus-rounded"></i>Factura</a><a class="action-link blue" href="#"><i class="icon-plus-rounded"></i>N&oacute;mina</a><a class="action-link gray" href="#"><i class="icon-search"></i>Consultar</a></div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/chartist.js"></script>
+    <script src="../js/app-charts.js"></script>
+  </body>
+</html>

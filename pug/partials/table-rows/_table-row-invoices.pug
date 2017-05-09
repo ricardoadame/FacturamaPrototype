@@ -1,0 +1,65 @@
+//Fila de Tabla
+.table-row
+  //Eliminar
+  .column.text-xs-center
+    a.btn-remove(href="#", title="Eliminar Elemento")
+      i.icon-close-rounded 
+  //Cantidad
+  .column
+    p 1
+  //Unidad
+  .column
+    select.form-control.form-control-sm(name="")
+      option Seleccionar Unidad 
+  //Descripción del concepto    
+  .column.description         
+    p#description-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  
+  //Precio
+  .column
+    b $0,000.00
+  //Subtotal
+  .column
+    b $0,000.00
+  //Descuento
+  .column.discount
+    select.form-control.form-control-sm(name="")
+      option $
+      option %
+    b 0
+    
+  //Impuestos
+  .column
+    .taxes
+      //IVA
+      select.form-control.form-control-sm(name="")
+        option IVA 16%
+      b 0
+      
+    .taxes
+      //IVA Ret
+      select.form-control.form-control-sm(name="")
+        option IVA Ret.
+      b 0
+      
+    .taxes
+      //ISR Ret
+      select.form-control.form-control-sm(name="")
+        option ISR Ret.
+      b 0
+    //Agregar Impuesto Local
+    a.btn-add-tax(href="#", title="Agregar Impuesto local") <i class="icon-plus-rounded"></i> Impuesto local  
+            
+    .pnl-taxes
+      .form-group
+        input.form-control.form-control-sm(type="text", name="", value="", placeholder="Nombre del impuesto")
+      .form-group
+        input.form-control.form-control-sm(type="text", name="", value="", placeholder="Tasa")
+      .form-group
+        input.form-control.form-control-sm(type="text", name="", value="", placeholder="Monto")
+        
+      a.btn.btn-success.btn-sm.btn-block(href="#", title="Agregar Impuesto local") <i class="icon-check-rounded"></i> Agregar
+                    
+  //Total
+  .column.text-xs-right
+    b.total $0,000.00

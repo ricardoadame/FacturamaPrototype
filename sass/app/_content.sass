@@ -1,0 +1,63 @@
+@import "../_variables"
+
+section#main-content
+	@media(max-width:$sm)
+		padding:
+			top: 3.125rem
+
+	@media(min-width:$sm)
+		padding:
+			top: 3.75rem
+
+	//Content Common:
+	aside#sidebar,
+	article#content
+		float: left
+		height: calc(100% - 3.125rem)
+		position: fixed
+
+	article#content
+		overflow-y: auto
+		overflow-x: hidden
+
+		@media (min-width: $md)
+			padding:
+				top: 1.25rem
+
+		@media (max-width: $md-special)
+			width: 100%
+
+		@media (min-width: $md-special)
+			margin:
+				left: 12.25rem
+			width: calc(100% - 12.25rem)
+
+		.container-fluid
+			@media (max-width: $sm)
+				padding:
+					bottom: 3rem
+
+			.page-title
+				background: rgba(255, 255, 255, 0.5)
+				border:
+					bottom: 1px solid rgba(0,0,0,0.05)
+				padding: 1.125rem 0
+				@media (min-width: $md-special)
+					display: none
+
+				b
+					color: lighten($gray, 30%)
+					font:
+						weight: 500
+
+			.banner
+				@media (max-width:$sm)
+					display: none
+
+.csd-info
+	margin:
+		bottom: 1rem
+
+	.form-group
+		label
+			color: $gray

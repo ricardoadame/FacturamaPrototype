@@ -1,0 +1,83 @@
+@import "../_variables"
+
+aside#sidebar
+  background: lighten($gray, 10%)
+  transition: all 0.25s ease-in-out
+  width: 12.25rem
+  z-index: 900
+
+  @media (max-width: $sm)
+    overflow-y: scroll
+
+  @media (min-width: $sm)
+    padding:
+      top: 1.25rem
+
+  @media (max-width: $md-special)
+    left: -100%
+
+  @media (min-width: $md-special)
+    left: 0
+
+
+  //Submenus
+  ul
+    display: block
+    list-style-type: none
+    margin: 0
+    padding: 0
+    width: 100%
+
+    li
+      a
+        color: lighten($gray, 60%)
+        display: block
+        font:
+          weight: 400
+
+        @media (max-width: $sm)
+          font:
+            size: 0.75rem
+          padding: 0.922rem
+
+        @media (min-width: $sm)
+          font:
+            size: 0.875rem
+          padding: 1.219rem 1rem
+
+        &:hover
+          color: $white
+
+        &:hover,
+        &:active,
+        &:focus
+          text:
+            decoration: none
+
+        i:first-child
+          color: lighten($gray, 40%)
+          display: inline-block
+          font:
+            size: 0.875rem
+          margin:
+            right: 0.25rem
+
+        i.icon-caret-down
+          font:
+            size: 70%
+          margin:
+            top: 0.3rem
+
+      ul.submenu
+        background: rgba(0, 0, 0, 0.2)
+        box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.10)
+        display: none
+
+        li
+          a
+            border:
+              bottom: 1px solid rgba(0, 0, 0, 0.15)
+            padding: 0.875rem 1rem
+
+            &:hover
+              background: rgba(0, 0, 0, 0.2)

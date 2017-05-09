@@ -1,0 +1,402 @@
+@import "../components/_animations"
+@import "../_variables"
+
+//Header basics
+
+header
+  background: $white
+  display: block
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05)
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 1000
+
+  @media (max-width: $sm)
+    height: 3rem
+  @media (min-width: $sm)
+    height: 3.75rem
+
+  a
+    display: inline-block
+
+    &:hover,
+    &:focus,
+    &:active
+      text-decoration: none
+
+
+
+  //Nav basics:
+  nav
+    height: 100%
+
+    //Nav Section:
+    .nav-section
+      display: inline-block
+      vertical-align: top
+
+    //Menu Trigger:
+    .nav-trigger
+      @media (min-width:64.1rem)
+        display: none
+
+      a
+        color: $gray
+        opacity: 0.2
+        position: relative
+        text:
+          align: center
+        vertical-align: middle
+
+        @media (max-width:$sm)
+          height: 3rem
+          padding: 1rem 0.625rem
+          width: 3rem
+
+        @media (min-width:$sm)
+          height: 3.75rem
+          padding: 1.312rem 1.375rem
+          width: 3.75rem
+
+        &:hover
+          opacity: 0.6
+
+        i
+          display: block
+
+      a#close
+        display: none
+
+
+    //Brand
+    .header-brand
+      a
+        text:
+          align: center
+
+        @media (max-width: $sm)
+          height: 3rem
+          padding: 0.625rem
+          width: 2.937rem
+
+        @media (min-width: $sm)
+          height: 100%
+          padding: 1.125rem
+          width: 3.75rem
+
+        i
+          display: block
+          font:
+            size: 1.5rem
+
+    //Page title
+    .page-title
+      color: lighten($gray, 40%)
+      @media (max-width:$md-special)
+        display: none
+      @media (min-width: $md-special)
+        height: 100%
+        padding: 1rem 1.25rem
+
+    //Main Tools
+    .main-tools
+      @media (max-width:$sm - 1)
+        display: none
+
+      a
+        font:
+          size: 0.875rem
+          weight: 400
+        text:
+          align: center
+
+        @media (min-width: $sm)
+          height: 100%
+          padding: 1.219rem
+          width: 7.5rem
+
+        i
+          font:
+            size: 0.75rem
+          margin:
+            right: 0.25rem
+
+      .blue
+        color: lighten($primary, 5%)
+
+        &:hover
+          color: $primary
+      .gray
+        color: lighten($gray, 50%)
+
+        &:hover
+          color: lighten($gray, 40%)
+
+    //Remaining invoices
+    .remaining-invoices
+      text:
+        align: center
+
+      @media (max-width:$md)
+        display: none
+
+      @media (min-width: $md)
+        padding: 1.125rem 0
+        width: 11.25rem
+
+      a
+        width: 100%
+
+        small
+          color: lighten($gray, 40%)
+
+        span#number
+          i
+            display: inline-block
+            font:
+              size: 1.25rem
+            margin:
+              left: 0.25rem
+            vertical-align: middle
+
+    //Notifications
+    .notifications
+
+      a
+        color: lighten($gray, 60%)
+        height: 100%
+        position: relative
+        text:
+          align: center
+
+        &:hover
+          color: lighten($gray, 40%)
+
+        &:hover > span.notification
+          animation: notifications 1s ease-in-out infinite
+
+        @media (max-width: $sm)
+          padding: 0.75rem 0
+          width: 2.25rem
+
+        @media (min-width: $sm)
+          padding: 1.125rem 0
+          width: 2.5rem
+
+        span.notification
+          background: $primary
+          border-radius: 1rem
+          border: 0.125rem solid $white
+          display: none
+          height: 0.75rem
+          position: absolute
+          width: 0.75rem
+
+          @media (max-width: $sm)
+            right: 0.25rem
+            top: 0.5rem
+          @media (min-width: $sm)
+            right: 0.625rem
+            top: 0.85rem
+
+        span.active
+          display: block
+
+    //Profile options
+
+    .profile
+      position: relative
+      text:
+        align: center
+
+      a.avatar
+        color: lighten($gray, 60%)
+
+        &:hover,
+        &:active,
+        &:focus
+          color: lighten($gray, 40%)
+
+        @media (max-width:$sm)
+          height: 3rem
+          padding: 0.5rem 0
+          width: 3rem
+
+        @media (min-width:$sm)
+          padding: 0.937rem 0
+          width: 3.75rem
+
+        img
+          border-radius: 0.5rem
+          max-width: 1.875rem
+
+        i
+          font:
+            size: 50%
+          margin:
+            left: 0.25rem
+
+      //Dropdown profile options
+      #dropdown-profile
+        animation: dropdownShow 0.25s ease-in-out forwards
+        background: $white
+        border:
+          radius: 0.5rem
+        box-shadow: 0px 10px 14px -10px rgba(0, 0, 0, 0.4)
+        display: none
+        position: absolute
+        top: 4.375rem
+        z-index: 1200
+
+        @media (max-width:$sm)
+          right: -2rem
+          width: 12.5rem
+
+        @media (min-width:$sm)
+          right: 0.625rem
+          width: 15rem
+
+
+
+
+        span.caret-up
+          border:
+            right: 0.5rem solid transparent
+            top: 0.5rem solid transparent
+            left: 0.5rem solid transparent
+            bottom: 0.5rem solid $white
+          height: 0
+          position: absolute
+          top: -1rem
+          width: 0
+
+          @media (max-width:$sm)
+            right: 3.4rem
+
+          @media (min-width:$sm)
+            right: 1rem
+
+        .header
+          border:
+            bottom: 1px solid rgba(0,0,0,0.05)
+
+          @media (max-width:$sm)
+            padding: 0.625rem 0
+          @media (min-width:$sm)
+            padding: 0.656rem 0
+
+          b,
+          small
+            display: block
+
+          small
+            font:
+              size: 0.625rem
+
+        .remaining-invoices
+          @media (max-width:$md)
+            display: block
+            padding: 0.625rem 0
+          @media (min-width:$md)
+            display: none
+
+        .referrals
+          border:
+            bottom: 1px solid rgba(0,0,0,0.05)
+
+          @media (max-width:$sm)
+            padding:
+              bottom: 0.625rem
+          @media (min-width:$sm)
+            padding: 0.77rem 0
+
+          a#btn-referrals
+            background: $primary
+            border:
+              radius: 2rem
+            color: $white
+            display: block
+            font:
+              weight: 400
+            margin: 0 auto
+            padding: 0.5rem 1rem
+            width: 95%
+
+            @media (max-width: $sm)
+              font:
+                size: 0.725rem
+
+            &:hover,
+            &:focus,
+            &:active
+              background: darken($primary, 5%)
+
+        .links
+          a
+            color: $primary
+            display: block
+            font:
+              weight: 400
+            text:
+              align: left
+
+            @media (max-width:$md)
+              font:
+                size: 0.75rem
+              padding: 0.625rem 1rem
+
+            @media (min-width:$md)
+              padding: 0.812rem 1rem
+
+            &:hover,
+            &:focus,
+            &:active
+              color: darken($primary, 5%)
+
+            i
+              margin:
+                right: 0.625rem
+
+          a:last-child
+            border:
+              top: 1px solid rgba(0,0,0,0.05)
+            color: lighten($gray, 40%)
+
+          &:hover,
+          &:active,
+          &:focus
+            color: lighten($gray, 10%)
+
+    //Upgrade:
+    .upgrade
+      text:
+        align: center
+
+      @media (max-width:$sm)
+        width: 3rem
+
+      @media (min-width:$sm)
+        width: 3.75rem
+
+      a#btn-upgrade-account
+        background: $primary
+        border:
+          radius: 0.5rem
+        color: $white
+        padding: 0.187rem 0.719rem
+        transition: all 0.15s ease-in-out
+
+        @media (max-width: $sm)
+          margin: 0.563rem auto
+
+        @media (min-width: $sm)
+          margin: 0.937rem auto
+
+        &:hover,
+        &:focus,
+        &:active
+          background: darken($primary, 5%)
+
+        &:hover
+          transform: scale(1.1)

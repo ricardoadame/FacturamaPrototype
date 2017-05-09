@@ -1,0 +1,71 @@
+// Sellos Digitales
+#csd-upload
+  .col-xs-12.col-sm-6.col-md-6
+    .row
+      .col-xs-12.section-title
+        h6 <i class="icon-ribbon text-muted"></i> Sellos Digitales (CSD)
+        a.show-info.float-xs-right(href="#" title="Mostrar Ayuda")
+          i.icon-help
+        .info
+          p Los Sellos digitales son los archivos .cer y .key que obtuviste en el SAT. Tales archivos son indispensables para poder sellar tus facturas y comprobar que eres t&uacute; el emisor legal de las mismas. 
+          
+    .row.csd-info
+      .col-xs-12.col-sm-6.col-md-6
+        include ../widgets/_file-upload
+      .col-xs-12.col-sm-6.col-md-6
+        include ../widgets/_file-upload
+        
+    .row.csd-info
+      .col-xs-12.col-sm-6.col-md-6
+        label N&uacute;mero de certificado:
+        b.text-info 12345678901234567890
+        
+      .col-xs-12.col-sm-6.col-md-6
+        label Vigencia:
+        b.text-info 01 / 01 / 2022
+      
+    .row.csd-info
+      .col-xs-12.col-sm-6.col-md-6.form-group
+        label Contrase&ntilde;a de los Sellos Digitales:
+        input.form-control.disabled(type="text" disabled value="uegbdcs89uierji3yh")
+            
+      .col-xs-12.col-sm-6.col-md-6
+        label Descargar:
+        a.btn.btn-link.btn-sm(href="#" title="Descargar el archivo .cer") <i class="icon-download"></i> .cer
+        a.btn.btn-link.btn-sm(href="#" title="Descargar el archivo .key") <i class="icon-download"></i> .key
+      
+      .col-xs-12
+        small.text-muted *Esta contrase&ntilde;a ser&aacute; la de los Sellos Digitales seg&uacute;n sea el caso de los archivos que se cargaron previamente. En este campo no hay que definir una nueva contrase&ntilde;a o volver a escribir la del acceso a Facturama.
+        
+  //- FIEL
+  .col-xs-12.col-sm-6.col-md-6
+    .row
+      .col-xs-12.section-title
+        h6 <i class="icon-ribbon text-muted"></i> Firma Electr&oacute;nica Avanzada (FIEL)
+        a.show-info.float-xs-right(href="#" title="Mostrar Ayuda")
+          i.icon-help
+        .info
+          p Recuerda que la FIEL no puede ser usada para emitir facturas. Una vez subidos estos archivos ser&aacute;n renombrados usando tu RFC.
+    .row.csd-info
+      .col-xs-12.col-sm-6.col-md-6
+        include ../widgets/_file-upload
+      .col-xs-12.col-sm-6.col-md-6
+        include ../widgets/_file-upload
+        
+    .row.csd-info
+      .col-xs-12.col-sm-6.col-md-6
+        label N&uacute;mero de certificado:
+        b.text-info 12345678901234567890
+        
+      .col-xs-12.col-sm-6.col-md-6
+        label Vigencia:
+        b.text-info 01 / 01 / 2022
+      
+    .row.csd-info
+      .col-xs-12.col-sm-6.col-md-6.form-group
+        label Contrase&ntilde;a de la Llave de la FIEL:
+        input.form-control.disabled(type="text" disabled value="uegbdcs89uierji3yh")
+        
+      .col-xs-12
+        small.text-muted *Esta contrase&ntilde;a ser&aacute; la de la FIEL. En este campo no hay que definir una nueva contrase&ntilde;a o volver a escribir la del acceso a Facturama.
+        

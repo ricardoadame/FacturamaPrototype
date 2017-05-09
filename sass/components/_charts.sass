@@ -1,0 +1,32 @@
+@import "../_variables"
+
+.ct-golden-section
+
+	.ct-series
+		.ct-slice-donut
+			stroke-width: 2rem!important
+
+	.ct-series-a
+		.ct-slice-donut
+			stroke: lighten($red, 10%)!important
+
+		.ct-line
+			stroke: lighten($red, 10%)!important
+
+		.ct-point
+			stroke: lighten($red, 10%)!important
+
+	.ct-series-b
+		.ct-slice-donut
+			stroke: $primary!important
+
+		.ct-line
+			stroke: $primary!important
+
+		.ct-point
+			stroke: $primary!important
+
+	.ct-label
+		@media (max-width: $sm)
+			font:
+				size: 0.6rem

@@ -1,0 +1,164 @@
+//Nueva factura:
+#new-invoice
+  //Datos obligatorios de la factura:
+  .col-xs-12.col-sm-6.col-md-6
+    .section-title
+      h6 <i class="icon-list"></i> Datos de la Factura:
+  
+    .card
+      .card-block
+        .row  
+          //Seleccionar Cliente
+          .col-xs-12.col-sm-6.col-md-6.form-group.edition
+            label Seleccionar Cliente:
+            select.form-control(name="")
+              option Seleccionar Moneda
+            .tools
+              a.text-info(href="#")
+                i.icon-plus
+              a.text-info(href="#")
+                i.icon-edit 
+              
+          //Seleccionar Tipo de factura:
+          .col-xs-12.col-sm-6.col-md-6.form-group
+            label Tipo de factura:
+            select.form-control(name="")
+              option Seleccionar tipo de factura
+              
+        .row                    
+          //Seleccionar Método de pago:
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label M&eacute;todo de pago:
+            select.form-control(name="")
+              option Seleccionar M&eacute;todo de pago
+              
+          //Lugar de expedición:
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label Lugar de expedici&oacute;n:
+            select.form-control(name="")
+              option Seleccionar Lugar de expedici&oacute;n
+              
+          //Series:
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label Series:
+            input.form-control(type="text", name="", value="", placeholder="Series")
+            
+    
+  //Datos opcionales de la factura:
+  .col-xs-12.col-sm-6.col-md-6
+    .section-title
+      h6 <i class="icon-list"></i> Datos opcionales de la Factura:
+
+    .card
+      .card-block
+        .row         
+          //Número de pedido
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label N&uacute;mero de pedido:
+            input.form-control(type="text", name="", value="", placeholder="Número de pedido")      
+                     
+          //Seleccionar Moneda:
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label Moneda:
+            select.form-control(name="")
+              option Seleccionar Moneda
+              
+          //Seleccionar Factura con fecha anterior:
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label Fecha anterior:
+            select.form-control(name="")
+              option Seleccionar Factura con fecha anterior  
+              
+        .row         
+          //Condiciones de pago
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label Condiciones de pago:
+            input.form-control(type="text", name="", value="", placeholder="Condiciones de pago")      
+                     
+          //Tipo de pago:
+          .col-xs-12.col-sm-4.col-md-4.form-group
+            label Tipo de pago:
+            select.form-control(name="")
+              option Seleccionar Tipo de pago
+              
+          //Seleccionar Factura con fecha anterior:
+          .col-xs-12.col-sm-4.col-md-4.add-observations
+            a.btn.btn-link.btn-sm.text-info(href="#", data-toggle="modal", data-target="#modal-observations") <i class="icon-plus"></i> Observaciones
+          
+
+  //Seleccionar producto o servicio:
+  .col-xs-12
+    .section-title
+      h6 <i class="icon-cart"></i> Seleccionar producto o servicio:
+    .card
+      .card-block
+        //Seleccionar producto o servicio:
+        .product-selection.row
+          .col-xs-12.col-sm-8.col-md-8.form-group
+            .edition
+              select.form-control(name="")
+                option Seleccionar Producto o servicio
+              
+              .tools
+                a.text-info(href="#")
+                  i.icon-plus
+                a.text-info(href="#")
+                  i.icon-edit 
+
+          //Seleccionar producto o servicio:
+          .col-xs-12.col-sm-4.col-md-4.text-xs-center.text-sm-right
+            a.btn.btn-link.btn-sm.text-info(href="#") <i class="icon-save"></i> Guardar
+            a.btn.btn-link.btn-sm.text-info(href="#", data-toggle="modal", data-target="#modal-preview") <i class="icon-search"></i> Vista Previa 
+
+  //Conceptos de la factura:  
+  .col-xs-12
+    .card.concepts
+      //Tabla
+      .concepts.table
+        //Encabezado
+        .header
+          .heading
+          .heading 
+            b Cant.
+          .heading 
+            b Unidad
+          .heading 
+            b Descripci&oacute;n                         
+          .heading 
+            b Precio
+          .heading 
+            b Subtotal
+          .heading 
+            b Descuento
+          .heading.taxes 
+            b Impuestos
+            
+          .heading 
+            b Total
+        .body
+          
+          - for (var i = 0; i < 10; ++i) {  
+            include table-rows/_table-row-invoices
+          - }
+            
+        //Footer:
+        .footer
+          
+          //Subtotal:
+          .quantity
+            small.text-muted Subtotal
+            b $0, 000.00
+          
+          //IVA:   
+          .quantity
+            small.text-muted IVA
+            b $0, 000.00    
+            
+          //Total:
+          .quantity
+            small.text-muted Subtotal
+            b $0, 000.00 
+          
+          .create 
+            a.btn.btn-success.btn-block.btn-lg(href="#") <i class="icon-check-rounded"></i> Crear Factura
+    

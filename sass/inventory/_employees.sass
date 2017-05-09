@@ -1,0 +1,196 @@
+@import "../_variables"
+
+#employees-inventory
+
+  .searchbox
+    padding:
+      top: 1rem
+
+    .form-group
+      input.form-control,
+      button,
+      a.btn
+        display: inline-block
+        vertical-align: middle
+
+      input.form-control
+        margin:
+          right: 0.625rem
+        @media (max-width: $sm)
+          width: 63.92%
+        @media (min-width: $sm)
+          width: 48%
+
+      a.btn
+        @media (max-width: $sm)
+          padding: 1rem
+
+    .group-selection
+      label
+        margin:
+          bottom: 0
+          top: 0.625rem
+      .options
+        padding: 0
+        a
+          color: lighten($gray, 60%)
+          display: inline-block
+          text:
+            align: center
+          vertical-align: middle
+          width: 33%
+
+          @media (min-width: $sm)
+            padding: 0.5rem 0
+
+          &:hover
+            color: lighten($gray, 40%)
+
+          &:hover,
+          &:focus,
+          &:active
+            text:
+              decoration: none
+
+  .employees
+    @media (max-width: $md)
+      overflow-x: auto
+
+  .employees.table
+    padding:
+      top: 3.75rem
+    @media (max-height: $sm)
+      min-height: 29rem
+    @media (min-height: $sm)
+      min-height: 44rem
+
+    .header
+      background: $white
+      position: absolute
+      top: 0
+      z-index: 10
+      width: 100%
+
+      .heading
+        border:
+          bottom: 1px solid rgba(0, 0, 0, 0.05)
+        float: left
+        height: 3.75rem
+        padding: 1.094rem 0.625rem
+
+        &:first-child
+          padding:
+            left: 0
+            right: 0
+          @media (max-width: $md)
+            width: 15%
+          @media (min-width: $md)
+            width: 10%
+
+        &:nth-child(2)
+          width: 20%
+
+        &:nth-child(4),
+        &:nth-child(5)
+          width: 15%
+
+        &:nth-child(3)
+          @media (max-width: $md)
+            width: 40%
+          @media (min-width: $md)
+            width: 40%
+
+        .edition.tools
+          float: left
+          text:
+            align: center
+          width: 33%
+
+    .body
+      overflow-y: auto
+      @media (max-height: $sm)
+        max-height: 21rem
+      @media (min-height: $sm)
+        max-height: 36.25rem
+
+      .table-row
+        border:
+          bottom: 1px solid rgba(0, 0, 0, 0.05)
+        display: inline-block
+        margin:
+          bottom: 0.625rem
+        width: 100%
+
+        &:last-child
+          border: none
+
+        .column
+          float: left
+          padding: 1.094rem 0.625rem
+
+          &:first-child
+            padding:
+              left: 0
+              right: 0
+            @media (max-width: $md)
+              width: 15%
+            @media (min-width: $md)
+              width: 10%
+
+          &:nth-child(2)
+            width: 20%
+
+          &:nth-child(4),
+          &:nth-child(5)
+            width: 15%
+
+          &:nth-child(3)
+            @media (max-width: $md)
+              width: 40%
+            @media (min-width: $md)
+              width: 40%
+
+          .btn-remove
+            color: lighten($gray, 60%)
+            display: inline-block
+            vertical-align: middle
+
+            &:hover
+              color: $red
+              text:
+                decoration: none
+
+          .edition.tools
+            float: left
+            text:
+              align: center
+            width: 33%
+
+    .footer
+      background: $white
+      border:
+        top: 1px solid rgba(0, 0, 0, 0.05)
+      bottom: 0
+      display: block
+      padding:
+        top: 1rem
+      position: absolute
+      width: 100%
+
+  .sidebar.menu
+    display: block
+    width: 100%
+
+    a
+      display: block
+      width: 100%
+
+      @media (max-width: $md)
+        font:
+          size: 0.75rem
+        padding: 0.625rem 0
+
+      @media (min-width: $md)
+        font:
+          size: inherit
+        padding: 0.5rem 0

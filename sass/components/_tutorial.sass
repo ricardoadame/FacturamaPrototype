@@ -1,0 +1,138 @@
+.tutorial
+  background: rgba(0, 0, 0, 0.5)
+  bottom: 0
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  transition: all 0.5s ease-in-out
+  z-index: 9999
+
+  .card-step.active
+    display: block
+
+  .card-step
+    background: $white
+    border-radius: 0.25rem
+    display: none
+    height: auto
+    position: absolute
+    width: 100%
+
+    .header
+      position: relative
+
+      @media (min-width: $sm)
+        padding: 1.125rem
+
+      span.caret-up
+        border:
+          right: 0.5rem solid transparent
+          top: 0.5rem solid transparent
+          left: 0.5rem solid transparent
+          bottom: 0.5rem solid $white
+        height: 0
+        position: absolute
+        transition: all 0.5s ease-in-out
+        top: -1rem
+        width: 0
+
+    .content
+      @media (min-width: $sm)
+        padding: 1.125rem
+
+  .initial,
+  .finish
+    left: 0
+    right: 0
+
+    @media (min-width: $sm)
+      margin: 15% auto 0
+      max-width: 28.75rem
+
+  .one,
+  .two,
+  .three
+    @media (min-width: $md)
+      max-width: 22.5rem
+      left: 42.2%
+      top: 0.625rem
+
+  .one
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 12.5%
+  .two
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 47.5%
+  .three
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 81%
+
+  .four
+    @media (min-width: $md)
+      max-width: 22.5rem
+      right: 12%
+      top: 0.625rem
+
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 48%
+
+  .five,
+  .six,
+  .seven,
+  .eight
+    @media (min-width: $md)
+      max-width: 22.5rem
+      right: 1rem
+      top: 0.625rem
+
+  .five
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 38%
+
+  .six
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 50%
+
+  .seven
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 61%
+
+  .eight
+    .header
+      span.caret-up
+        @media (min-width: $md)
+          left: 85%
+
+  .nine
+    @media (min-width: $md)
+      max-width: 22.5rem
+      left: 1rem
+      top: 15%
+
+    span.caret-left
+      border:
+        right: 0.5rem solid $white
+        top: 0.5rem solid transparent
+        left: 0.5rem solid transparent
+        bottom: 0.5rem solid transparent
+      height: 0
+      left: -1rem
+      position: absolute
+      transition: all 0.5s ease-in-out
+      top: 45%
+      width: 0

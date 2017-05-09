@@ -1,0 +1,49 @@
+@import "../_variables"
+
+footer
+  background: $white
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.10)
+  bottom: 0
+  position: fixed
+  width: 100%
+  z-index: 100
+
+  @media (min-width:$sm)
+    display: none
+
+
+  .main-tools
+    a
+      float: left
+      font:
+        size: 0.875rem
+        weight: 400
+      height: 100%
+      text:
+        align: center
+      padding: 0.844rem 0
+      width: 33.33%
+
+      &:hover,
+      &:active,
+      &:focus
+        text:
+          decoration: none
+
+      i
+        font:
+          size: 0.75rem
+        margin:
+          right: 0.25rem
+
+    .blue
+      color: lighten($primary, 5%)
+
+      &:hover
+        color: $primary
+
+    .gray
+      color: lighten($gray, 50%)
+
+      &:hover
+        color: lighten($gray, 40%)

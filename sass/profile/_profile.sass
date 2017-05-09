@@ -1,0 +1,49 @@
+#profile-content,
+#profile-sidebar
+  float: left
+
+#profile-content
+  @media (min-width: $md)
+    width: calc(100% - 11.25rem)
+
+#profile-sidebar
+  @media (min-width: $md)
+    max-width: 11.25rem
+    width: 100%
+
+  .sb-header,
+  .sb-menu
+    display: block
+    width: 100%
+
+  .sb-header
+    @media (min-width: $md)
+      height: 3.75rem
+
+    a
+      color: lighten($gray, 60%)
+      display: inline-block
+      padding: 1rem
+      vertical-align: middle
+
+      &:hover
+        color: $primary
+        text:
+          decoration: none
+
+      @media (min-width: $md)
+        display: none
+
+  .sb-menu
+    a
+      color: lighten($gray, 40%)
+      display: block
+      font:
+        size: 80%
+      padding: 0.5rem 0
+      width: 100%
+
+      &:hover
+        color: $primary
+        text:
+          decoration: none

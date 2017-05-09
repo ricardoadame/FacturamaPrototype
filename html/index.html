@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Facturama</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/wizard.css">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400">
+    <link rel="icon" href="../favicon.ico">
+  </head>
+  <body> 
+    <!--if lt IE 8
+    p.chromeframe.
+    You are using an <strong>outdated</strong> browser.
+    Please <a href="http://browsehappy.com/">upgrade your browser</a>
+    to improve your experience.
+    
+    -->
+    <div id="wizard">
+      <div class="wizard">
+        <div class="content">
+          <div class="step one active text-xs-center"><i class="icon-logo-redux icon-5x text-info"></i>
+            <p class="lead">Para continuar sigue estos sencillos pasos, que te guiar&aacute;n para tener lista tu cuenta y poder emitir y recibir facturas</p>
+            <p class="text-muted">Dando click en el siguiente enlace estar&aacute;s de acuerdo con nuestros <a href="#" class="text-info">terminos y condiciones del servicio</a> y has le&iacute;do nuestro <a href="#" class="text-info">aviso de privacidad</a> </p><a class="btn btn-link text-info" id="btn-go" href="#">Comenzar</a>
+          </div>
+          <div class="step two">
+            <div class="header text-xs-center">
+              <h6>Agrega tus Sellos Digitales y la FIEL</h6>
+            </div>
+            <div class="partial"> 
+              <!--include ../_csd-upload-->
+            </div>
+            <div class="partial-footer text-xs-center"> <a class="btn btn-link text-info" id="btn-2" href="#">Siguiente <i class="icon-chevron-right-rounded"></i></a></div>
+          </div>
+          <div class="step three">
+            <div class="header text-xs-center">
+              <h6>Perfil Fiscal</h6>
+            </div>
+            <div class="partial"> </div>
+            <div class="partial-footer text-xs-center"> <a class="btn btn-link text-info" id="btn-3" href="#">Siguiente <i class="icon-chevron-right-rounded"></i></a></div>
+          </div>
+          <div class="step four">
+            <div class="header text-xs-center">
+              <h6>Agregar Cliente</h6>
+            </div>
+            <div class="partial"> </div>
+            <div class="partial-footer text-xs-center"> <a class="btn btn-link text-info" id="btn-4" href="#">Siguiente <i class="icon-chevron-right-rounded"></i></a></div>
+          </div>
+          <div class="step five">
+            <div class="header text-xs-center">
+              <h6>Agregar Producto</h6>
+            </div>
+            <div class="partial"> </div>
+            <div class="partial-footer text-xs-center"> <a class="btn btn-link text-info" id="btn-5" href="#">Siguiente <i class="icon-chevron-right-rounded"></i></a></div>
+          </div>
+          <div class="step six text-xs-center"><i class="icon-logo-redux icon-5x text-info"></i>
+            <p class="lead">&iexcl;Felicidades!</p>
+            <p class="text-muted">Tu Perfil Fiscal esta completo y puedes comenzar a utilizar nuestros servicios</p><a class="btn btn-link text-info" id="btn-go" href="app.html">Finalizar</a>
+          </div>
+        </div>
+        <div class="footer">
+          <ul class="progress-bar">
+            <li>Sellos Digitales</li>
+            <li>Perfil Fiscal</li>
+            <li>Agregar Cliente</li>
+            <li>Agregar Producto</li>
+            <li>Finalizar</li>
+          </ul>
+          <div class="bar">
+            <div class="fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="../js/wizard.js"></script>
+  </body>
+</html>

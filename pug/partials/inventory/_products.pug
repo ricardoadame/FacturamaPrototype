@@ -1,0 +1,72 @@
+//Catálogo de Productos:
+#products-inventory
+  .col-xs-12.abstract
+    i.icon-help.text-muted
+    p Aqu&iacute; podr&aacute;s subir tu <b>cat&aacute;logo de productos</b> de forma <b>masiva</b>, a trav&eacute;s de un archivo <b>.csv</b>. En <b>Documentaci&oacute;n de productos</b> se descargar&aacute; la plantilla base y un documento con los detalles para el llenado del archivo.
+  
+  .col-xs-12.col-sm-12.col-md-12.col-lg-10
+    //Searchbox:
+    .card.searchbox
+      .col-xs-12.col-sm-6.col-md-7.form-group
+        input.form-control(type="text", name="", value="")
+        button.btn.btn-info(type="button", name="button") Buscar
+        
+      .col-xs-12.col-sm-6.col-md-5.text-xs-right
+        a.btn.text-danger(href="#") <i class="icon-close"></i> Eliminar
+        a.btn.text-info(href="#") <i class="icon-plus"></i> Agregar Producto
+        
+    //Searchbox:
+    .card
+      .products.table
+        .header 
+          .heading
+            .form-check.edition.tools
+              label.form-check-label
+                input.form-check-input(type="checkbox", name="", value="")
+            
+          .heading 
+            b Nombre
+          .heading 
+            b C&oacute;digo
+          .heading 
+            b Descripci&oacute;n                         
+          .heading 
+            b Precio
+            
+        .body 
+          - for (var i = 0; i < 5; ++i) {
+            include ../table-rows/_table-row-products
+          - }
+        
+        .footer.text-xs-center
+          nav(aria-label="Page navigation example")
+            ul.pagination.justify-content-center
+              li.page-item
+                a.page-link(href="#")
+                  i.icon-chevron-left
+                    
+              li.page-item
+                a.page-link(href="#") 1
+              li.page-item 
+                a.page-link(href="#") 2
+              li.page-item 
+                a.page-link(href="#") 3
+              li.page-item 
+                a.page-link(href="#") 4
+              li.page-item 
+                a.page-link(href="#") 5
+              
+              li.page-item
+                a.page-link(href="#")
+                  i.icon-chevron-right
+    
+          
+          
+  //Sidebar Menu
+  .col-xs-12.col-sm-12.col-md-6.col-lg-2
+    .sidebar.menu 
+      a.text-info(href="#") Documentaci&oacute;n de productos
+      a.text-info(href="#") Subir archivo .csv
+      a.text-info(href="#") Procesar archivo
+      a.text-info(href="#") Ver estado del proceso
+    

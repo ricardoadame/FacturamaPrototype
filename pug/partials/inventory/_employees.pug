@@ -1,0 +1,72 @@
+//Catálogo de Empleados:
+#employees-inventory
+  
+  .col-xs-12.col-sm-12.col-md-12
+    //Searchbox:
+    .card.searchbox
+      .col-xs-12.col-sm-6.col-md-6.form-group.text-xs-center.text-sm-left
+        input.form-control(type="text", name="", value="")
+        button.btn.btn-info(type="button", name="button") Buscar  
+        a.btn.text-info(href="#") <i class="icon-plus"></i> Agregar Empleado
+        
+      .col-xs-12.col-sm-6.col-md-6.text-xs-right.group-selection
+        .col-xs-12.col-sm-4
+          label Seleccionar un grupo
+        .col-xs-12.col-sm-6
+          select.form-control
+            option Seleccionar un grupo de empleados
+        .options.col-xs-12.col-sm-2
+          a.item(href="#")
+            i.icon-plus
+          a.item(href="#")
+            i.icon-close
+          a.item(href="#")
+            i.icon-edit
+        
+    //Searchbox:
+    .card
+      .employees.table
+        .header
+          //Vacío
+          .heading
+          //Puesto
+          .heading 
+            b Puesto
+          //Nombre
+          .heading 
+            b Nombre del empleado 
+          //RFC                       
+          .heading 
+            b RFC    
+          //NSS                  
+          .heading 
+            b No. Seguridad Social
+            
+        .body 
+          - for (var i = 0; i < 10; ++i) {
+            include ../table-rows/_table-row-employees
+          - }
+        
+        .footer.text-xs-center
+          //Navigation
+          nav(aria-label="Page navigation example")
+            ul.pagination.justify-content-center
+              li.page-item
+                a.page-link(href="#")
+                  i.icon-chevron-left
+                    
+              li.page-item
+                a.page-link(href="#") 1
+              li.page-item 
+                a.page-link(href="#") 2
+              li.page-item 
+                a.page-link(href="#") 3
+              li.page-item 
+                a.page-link(href="#") 4
+              li.page-item 
+                a.page-link(href="#") 5
+              
+              li.page-item
+                a.page-link(href="#")
+                  i.icon-chevron-right
+    

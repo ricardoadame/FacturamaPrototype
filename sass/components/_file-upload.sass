@@ -1,0 +1,48 @@
+.file-upload
+  .file-drop
+    border-radius: 0.5rem
+    border:
+      color: lighten($gray, 60%)
+      style: dashed
+      width: 0.125rem
+    color: lighten($gray, 60%)
+    display: block
+    height: 11.25rem
+    margin: 1rem auto
+    padding: 3rem 1rem
+    text:
+      align: center
+    width: 11.25rem
+
+    i
+      margin:
+        bottom: 0.625rem
+    i,span
+      display: block
+
+    span
+      font:
+        size: 0.85rem
+        weight: 400
+
+  .over
+    border:
+      color: $primary
+    color: $primary
+
+  .file-input
+    overflow: hidden
+    padding: 0.625rem 0
+    position: relative
+
+    input.fu
+      bottom: 0
+      left: 0
+      opacity: 0
+      filter: alpha(opacity=0)
+      position: absolute
+      top: 0
+      right: 0
+
+      &:hover
+        cursor: pointer

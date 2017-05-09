@@ -1,0 +1,114 @@
+//Dashboard
+#dashboard-content
+  //Ingresos y Egresos:
+  .col-xs-12.col-sm-6.col-md-6.col-lg-4.chart-top
+    .section-title
+      h6 <i class="icon-money text-muted"></i> Ingresos y gastos
+      
+    .datepicker.year.float-xs-right
+      label#current-year.text-info 2017 
+      .arrows
+        a.year.increase(href='#', title="Año siguiente") 
+          i.icon-caret-up
+        a.year.decrease(href='#', title="Año anterior") 
+          i.icon-caret-down
+    .card 
+      //Chart Donut (Ingresos y Gastos):
+      .chart.donut
+        .ct-chart.ct-golden-section#chart-1
+      
+      // Chart Labels:
+      .info
+        small.text-muted <span class="indicator cyan"></span> Ingresos 
+        h4.in.quantity $0,000.00
+        
+        small.text-muted <span class="indicator red"></span> Gastos 
+        h4.out.quantity $0,000.00
+      
+  //Emitidas y Recibidas:
+  .col-xs-12.col-sm-6.col-md-6.col-lg-4.chart-top
+    .section-title
+      h6 <i class="icon-invoices text-muted"></i> Facturas emitidas y recibidas
+      
+    .datepicker.year.float-xs-right
+      label.text-info 2017 
+      .arrows
+        a.year.increase(href='#', title="Año siguiente") 
+          i.icon-caret-up
+        a.year.decrease(href='#', title="Año anterior") 
+          i.icon-caret-down
+    .card 
+      //Chart Donut (Ingresos y Gastos):
+      .chart.donut
+        .ct-chart.ct-golden-section#chart-2
+      
+      // Chart Labels:
+      .info
+        small.text-muted <span class="indicator cyan"></span> Emitidas 
+        h4.in.quantity 0,000
+        
+        small.text-muted <span class="indicator red"></span> Recibidas 
+        h4.out.quantity 0,000
+                
+  //Anuncios:
+  .col-lg-4.ads-section.text-xs-center
+    .card 
+      img.img-fluid(src="https://facturama.mx/Public/img/public_img/banner-creze.jpg", alt="")
+      
+
+  .col-xs-12.col-sm-12.col-md-12.col-lg-6.chart-bottom
+    .section-title
+      h6 <i class="icon-money text-muted"></i> Ingresos y gastos
+      
+    .options.float-xs-right
+      .items
+        a.text-info(href="#") <i class="icon-switch"></i> Comparar
+        a.text-info(href="#") Mensual <i class="icon-caret-down"></i>
+        a.text-info(href="#") Anual <i class="icon-caret-down"></i>
+      
+      .trigger 
+        a#trigger-options.text-info(href="#", title="Ver Opciones") <i class="icon-more-vertical"></i>
+      
+    .card
+      //Chart Line (Ingresos y Gastos):
+      .chart.line
+        .ct-chart.ct-golden-section#chart-3
+      
+      .footer.info
+        .row 
+          .col-xs-6.text-xs-center
+            small.text-muted <span class="indicator cyan"></span> Ingresos 
+            h4.in.quantity $0,000.00
+            
+          .col-xs-6.text-xs-center
+            small.text-muted <span class="indicator red"></span> Gastos 
+            h4.out.quantity $0,000.00
+            
+  .col-xs-12.col-sm-12.col-md-12.col-lg-6.chart-bottom
+    .section-title
+      h6 <i class="icon-invoices text-muted"></i> Facturas emitidas y recibidas
+      
+    .options.float-xs-right
+      .items
+        a.text-info(href="#") <i class="icon-switch"></i> Comparar
+        a.text-info(href="#") Mensual <i class="icon-caret-down"></i>
+        a.text-info(href="#") Anual <i class="icon-caret-down"></i>
+      
+      .trigger 
+        a#trigger-options.text-info(href="#", title="Ver Opciones") <i class="icon-more-vertical"></i>
+    .card          
+      //Chart Line (Ingresos y Gastos):
+      .chart.line
+        .ct-chart.ct-golden-section#chart-4
+      
+      .footer.info
+        .row 
+          .col-xs-6.text-xs-center
+            small.text-muted <span class="indicator cyan"></span> Emitidas 
+            h4.in.quantity 0,000
+            
+          .col-xs-6.text-xs-center
+            small.text-muted <span class="indicator red"></span> Recibidas 
+            h4.out.quantity 0,000
+
+// End Dashboard
